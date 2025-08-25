@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD BANKS - Fashion E‑Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>JD BANKS</h1>
+            </div>
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#women" class="nav-link">Women</a></li>
+                    <li><a href="#men" class="nav-link">Men</a></li>
+                    <li><a href="#juniors" class="nav-link">Juniors</a></li>
+                    <li><a href="#cart" class="nav-link">Cart <span id="cart-count" class="badge">0</span></a></li>
+                    <li><a href="#admin" class="nav-link">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="hero">
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=2070&auto=format&fit=crop" alt="Fashion Banner" class="hero-banner">
+                </div>
+                <div class="hero-content">
+                    <h2>Elevate Your Style with JD BANKS</h2>
+                    <p>Discover curated fashion for Women, Men, and Juniors.</p>
+                    <button class="cta-button" onclick="navigateTo('#women')">Shop Women</button>
+                    <button class="cta-button" onclick="navigateTo('#men')">Shop Men</button>
+                    <button class="cta-button" onclick="navigateTo('#juniors')">Shop Juniors</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="features">
+                    <div class="feature">
+                        <h3>Free Shipping</h3>
+                        <p>On orders over 5 items</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Premium Quality</h3>
+                        <p>Handpicked brands and styles</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Secure Checkout</h3>
+                        <p>Trusted payment gateways</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women Section -->
+        <section id="women" class="section">
+            <div class="container">
+                <h2>Women</h2>
+                <p>Shop Shoes, Dresses, and Accessories</p>
+                <div class="categories" id="women-categories">
+                    <!-- Filled by JS: Shoes, Dresses, Accessories -->
+                </div>
+                <h3 class="subheading" id="women-listing-title">Featured Products</h3>
+                <div class="product-grid" id="women-products"></div>
+            </div>
+        </section>
+
+        <!-- Men Section -->
+        <section id="men" class="section">
+            <div class="container">
+                <h2>Men</h2>
+                <p>Explore Shoes, Apparel, and Accessories</p>
+                <div class="categories" id="men-categories">
+                    <!-- Filled by JS: 3 categories -->
+                </div>
+                <h3 class="subheading" id="men-listing-title">Featured Products</h3>
+                <div class="product-grid" id="men-products"></div>
+            </div>
+        </section>
+
+        <!-- Juniors Section -->
+        <section id="juniors" class="section">
+            <div class="container">
+                <h2>Juniors</h2>
+                <p>Trendy picks for boys and girls</p>
+                <div class="categories" id="juniors-categories">
+                    <!-- Filled by JS: 3 categories -->
+                </div>
+                <h3 class="subheading" id="juniors-listing-title">Featured Products</h3>
+                <div class="product-grid" id="juniors-products"></div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <div class="container">
+                <h2>Your Cart</h2>
+                <p>Review your items and proceed to checkout</p>
+                <div class="cart-wrapper">
+                    <div class="cart-table-wrapper">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items">
+                                <!-- Filled by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cart-summary" id="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-line"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+                        <div class="summary-line"><span>Delivery</span><span id="shipping">$0.00</span></div>
+                        <div class="summary-line total"><span>Total</span><span id="grand-total">$0.00</span></div>
+
+                        <div class="customer-form">
+                            <h4>Customer Details</h4>
+                            <div class="form-row"><input id="cust-phone" type="tel" placeholder="Phone (required)" required></div>
+                            <div class="form-row"><input id="cust-email" type="email" placeholder="Email (required)" required></div>
+                            <div class="form-row"><input id="cust-address" type="text" placeholder="Address (required)" required></div>
+                            <div class="form-row">
+                                <input id="cust-postal" type="text" placeholder="Postal Code (required)" required>
+                            </div>
+                            <div class="form-row">
+                                <input id="cust-city" type="text" placeholder="City (required)" required>
+                            </div>
+                            <div class="form-row">
+                                <input id="cust-country" type="text" placeholder="Country (required)" required>
+                            </div>
+                        </div>
+
+                        <button class="cta-button" id="checkout-btn">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="section">
+            <div class="container">
+                <h2>Admin Dashboard</h2>
+                <p>Sign in to manage products (add/edit/delete). Shoppers can only browse and buy.</p>
+
+                <div id="admin-login" class="admin-card">
+                    <h3>Admin Sign In</h3>
+                    <div class="form-row"><input id="admin-email" type="email" placeholder="Admin Email"></div>
+                    <div class="form-row"><input id="admin-password" type="password" placeholder="Password"></div>
+                    <div class="form-row"><button id="admin-signin" class="cta-button">Sign In</button></div>
+                    
+                </div>
+
+                <div id="admin-panel" class="admin-card" style="display:none;">
+                    <div class="admin-topbar">
+                        <h3>Product Manager</h3>
+                        <div class="spacer"></div>
+                        <button id="admin-signout" class="secondary-button">Sign Out</button>
+                    </div>
+
+                    <div class="admin-filterbar">
+                        <div class="admin-filter">
+                            <label for="admin-filter-gender">Module</label>
+                            <select id="admin-filter-gender">
+                                <option value="women">Women</option>
+                                <option value="men">Men</option>
+                                <option value="juniors">Juniors</option>
+                            </select>
+                        </div>
+                        <div class="admin-filter">
+                            <label for="admin-filter-category">Category</label>
+                            <select id="admin-filter-category">
+                                <!-- options populated by JS -->
+                            </select>
+                        </div>
+                        <div class="spacer"></div>
+                        <button id="admin-new" class="cta-button">New Product</button>
+                    </div>
+
+                    <div class="admin-layout">
+                        <div class="admin-form">
+                            <h4 id="admin-form-title">Add / Edit Product</h4>
+                            <input type="hidden" id="product-id">
+                            <div class="form-row"><input id="product-title" type="text" placeholder="Title" required></div>
+                            <div class="form-row"><input id="product-price" type="number" min="0" step="0.01" placeholder="Price" required></div>
+                            <small style="display:block;margin:6px 0 8px;color:#666;">For new items, Module and Category are taken from the top filter.</small>
+                            <small style="display:block;margin:0 0 8px;color:#2c3e50;font-weight:500;">📝 Size Selection Info:<br>
+                            • Shoes: EU sizes automatically included<br>
+                            • Women's Dresses: S/M/L/XL sizes included<br>
+                            • Men's Apparel: S/M/L/XL/XXL sizes included<br>
+                            • Junior Apparel: Age-based sizes (1-8 years) included</small>
+                            <div class="form-row">
+                                <input id="product-image" type="file" accept="image/*">
+                            </div>
+                            <div class="form-row">
+                                <input id="product-image-url" type="url" placeholder="Or paste Image URL">
+                            </div>
+                            <small style="display:block;margin:6px 0 6px;color:#666;">Optional: up to 3 additional images</small>
+                            <div class="form-row"><input id="product-image1" type="file" accept="image/*"></div>
+                            <div class="form-row"><input id="product-image1-url" type="url" placeholder="Additional Image 1 URL (optional)"></div>
+                            <div class="form-row"><input id="product-image2" type="file" accept="image/*"></div>
+                            <div class="form-row"><input id="product-image2-url" type="url" placeholder="Additional Image 2 URL (optional)"></div>
+                            <div class="form-row"><input id="product-image3" type="file" accept="image/*"></div>
+                            <div class="form-row"><input id="product-image3-url" type="url" placeholder="Additional Image 3 URL (optional)"></div>
+                            <div class="form-actions">
+                                <button id="product-save" class="cta-button">Save</button>
+                                <button id="product-cancel" class="secondary-button">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-table">
+                            <table class="cart-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th>Gender</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-products">
+                                    <!-- Filled by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JD BANKS</h3>
+                    <p>Your destination for modern fashion.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#women">Women</a></li>
+                        <li><a href="#men">Men</a></li>
+                        <li><a href="#juniors">Juniors</a></li>
+                        <li><a href="#cart">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <p> +92 302 8346089</p>
+                    <p> support@jdbanks.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JD BANKS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content" role="document">
+            <button id="image-modal-close" class="image-modal-close" aria-label="Close">×</button>
+            <button id="image-modal-prev" class="image-modal-nav prev" aria-label="Previous">‹</button>
+            <img id="image-modal-img" src="" alt="Product image preview" />
+            <button id="image-modal-next" class="image-modal-nav next" aria-label="Next">›</button>
+        </div>
+    </div>
+
+    <!-- Motion One (Framer) for animations -->
+    <script src="https://unpkg.com/@motionone/dom/dist/motion-one.umd.js"></script>
+
+    <!-- Firebase SDK (v10+ modular) with Analytics -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBBuwyuOoNbSBHoUtc0zRRXewdNzPsclBI",
+        authDomain: "jd-banks.firebaseapp.com",
+        projectId: "jd-banks",
+        storageBucket: "jd-banks.firebasestorage.app",
+        messagingSenderId: "238816454669",
+        appId: "1:238816454669:web:6b98db7191e7d04a934d44",
+        measurementId: "G-WFKRVGSHBJ"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Optional: expose to window
+      window.firebaseApp = app;
+      window.firebaseAnalytics = analytics;
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
